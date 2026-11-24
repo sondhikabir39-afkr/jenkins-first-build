@@ -1,25 +1,11 @@
-
 pipeline {
     agent any
 
     stages {
         stage('Build') {
             steps {
-                echo 'Hello! Jenkins is working.'
-                echo 'My first successful build!'
+                sh 'mvn clean package'
             }
-        }
-
-        stage('Test') {
-            steps {
-                echo 'Testing completed!'
-            }
-        }
-    }
-
-    post {
-        success {
-            echo 'BUILD SUCCESSFUL!'
         }
     }
 }
